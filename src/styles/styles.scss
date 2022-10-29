@@ -1,0 +1,95 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Colors */
+/* Purple */
+$primary-50: rgba(168, 164, 255, 25%);
+$primary-100: #a8a4ff;
+$primary-200: #635fc7;
+/* Grey */
+$grey-100: #f4f7fd;
+$grey-200: #e4ebfa;
+$grey-300: #828fa3;
+$grey-400: #3e3f4e;
+$grey-500: #2b2c37;
+$grey-600: #20212c;
+$grey-700: #000112;
+/* Red */
+$red-light: #ff9898;
+$red-dark: #ea5555;
+/* Rest of the colors */
+$black: #222;
+$white: #fff;
+
+/* fonts */
+$bodyFont: 'Plus Jakarta Sans', sans-serif;
+
+/* Rest of vars */
+$transition: 0.3s ease-in-out all;
+$letterSpacing: 1px;
+$border: solid 1px $grey-300;
+
+body {
+  font-family: $bodyFont;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+a {
+  text-decoration: none;
+  letter-spacing: $letterSpacing;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Buttons */
+// .btn {
+//   cursor: pointer;
+//   display: inline-block;
+//   background-color: $primary-200 !important;
+//   border: transparent;
+//   color: $white;
+//   border-radius: 24px;
+//   padding: 15px 25px;
+//   font-size: 15px;
+// }
+.btn:hover {
+  background-color: $primary-100;
+}
+.btn-light {
+  background-color: $primary-50;
+  color: $primary-200;
+}
+.btn-light:hover {
+  background-color: $white;
+  border: 1px solid $primary-200;
+}
+.btn-danger {
+  background-color: $red-dark;
+  color: $white;
+}
+.btn-danger:hover {
+  background-color: $red-light;
+  color: $white;
+}
+.btn-disabled {
+  cursor: not-allowed;
+  background-color: $primary-100;
+  opacity: 25%;
+}
+.btn-block {
+  width: 100%;
+}
+.ellipsis {
+  cursor: pointer;
+  margin-left: 24px;
+}

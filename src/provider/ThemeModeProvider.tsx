@@ -10,14 +10,14 @@ function useThemeContext() {
 }
 
 const ThemeModeProvider = (props: { children: ReactNode }) => {
-  const [darkMode, setDarkMode] = useState<boolean>(true);
+  const [darkMode, setDarkMode] = useState<boolean>(false);
 
   const handleToggleTheme = () => {
     setDarkMode(!darkMode);
   };
 
-  const dark = '#020826';
-  const light = '#f5f5f5';
+  const dark = '#20212C';
+  const light = '#E4EBFA';
 
   useEffect(() => {
     localStorage.setItem('darkMode', JSON.stringify(darkMode));

@@ -1,0 +1,51 @@
+.layout {
+  // display: flex;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+
+  aside {
+    width: 300px;
+    border-right: $border;
+    min-height: 100vh;
+    margin-right: 0px;
+    padding-left: 34px;
+    padding-top: 30px;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    height: 96px;
+    border-bottom: $border;
+    padding-left: 24px;
+    padding-right: 32px;
+    .btn {
+      cursor: pointer;
+      display: inline-block;
+      background-color: $primary-200 !important;
+      border: transparent;
+      color: $white;
+      border-radius: 24px;
+      padding: 15px 25px;
+      font-size: 15px;
+      line-height: 18.9px;
+    }
+    .btn-disabled {
+      cursor: not-allowed;
+      background-color: $primary-100;
+      opacity: 25%;
+    }
+    .btn-nav {
+      margin-right: 24px;
+    }
+  }
+
+  main {
+    color: $grey-300;
+    min-height: calc(100vh - 96px);
+    min-width: calc(100vw - 300px);
+  }
+}
