@@ -32,14 +32,10 @@ $bodyFont: 'Plus Jakarta Sans', sans-serif;
 /* Rest of vars */
 $transition: 0.3s ease-in-out all;
 $letterSpacing: 1px;
-$border: solid 1px $grey-300;
+$border: solid 1px $grey-200;
 
 body {
   font-family: $bodyFont;
-}
-
-h1 {
-  font-size: 24px;
 }
 
 a {

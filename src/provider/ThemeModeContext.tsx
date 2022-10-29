@@ -6,7 +6,6 @@ export interface IThemeModeContext {
   dark: string;
   light: string;
   handleToggleTheme: () => void;
-  // styles: any;
 }
 
 export const ThemeModeContext = createContext<IThemeModeContext | undefined>(
