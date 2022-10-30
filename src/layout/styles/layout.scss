@@ -9,6 +9,9 @@
     min-height: 100vh;
     margin-right: 0px;
     padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     .navbar-brand {
       padding-left: 34px;
     }
@@ -51,6 +54,32 @@
       height: 16px;
       width: 16px;
       margin-right: 16px;
+    }
+    .toggle-container {
+      bottom: 47px;
+      .sidebar-toggler {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: $grey-300;
+        font-size: 15px;
+        font-weight: 700;
+        margin-left: 34px;
+        margin-bottom: 47px;
+        cursor: pointer;
+      }
+      .hide-sidebar-icon {
+        margin-right: 10px;
+      }
+      .hide-sidebar-icon:hover {
+        background: $primary-50;
+        color: $primary-200;
+        cursor: pointer;
+      }
+      .hide-sidebar-icon:hover .icon {
+        filter: invert(39%) sepia(80%) saturate(854%) hue-rotate(213deg)
+          brightness(83%) contrast(86%);
+      }
     }
   }
 
