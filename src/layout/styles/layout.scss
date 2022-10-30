@@ -39,6 +39,10 @@
       background: #ffffff;
       color: $primary-200;
     }
+    .nav-link.create-board:hover {
+      background: $primary-200;
+      color: #ffffff;
+    }
     .nav-link.create-board .icon {
       filter: invert(39%) sepia(80%) saturate(854%) hue-rotate(213deg)
         brightness(83%) contrast(86%);
@@ -50,6 +54,10 @@
     .nav-link-dark {
       color: #ffffff;
       background: $grey-500;
+    }
+    .nav-link.nav-link-dark:hover {
+      background: #ffffff;
+      color: $primary-200;
     }
     .nav-link.active {
       background: $primary-200;
