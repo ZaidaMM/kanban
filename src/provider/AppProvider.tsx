@@ -6,7 +6,11 @@ import {
   ChangeEventHandler,
 } from 'react';
 import { AppContext } from './AppContext';
-import { IBoardsData } from '../interfaces/IBoardsData';
+import {
+  IBoardsData,
+  IColumnsData,
+  ITasksData,
+} from '../interfaces/IBoardsData';
 import data from '../data.json';
 
 function useAppContext() {
@@ -21,7 +25,15 @@ const AppProvider = (props: { children: ReactNode }) => {
   const [showNewTaskModal, setShowNewTaskModal] = useState(false);
   const [board, setBoard] = useState<IBoardsData>();
   const [boards, setBoards] = useState<IBoardsData[]>([]);
+  const [column, setColumn] = useState<IColumnsData>();
+  const [columns, setColumns] = useState<IColumnsData[]>([]);
+  const [task, setTask] = useState<ITasksData>();
+  const [tasks, setTasks] = useState<ITasksData[]>([]);
   const [selectedBoard, setSelectedBoard] = useState<IBoardsData | undefined>();
+  const [selectedColumn, setSelectedColumn] = useState<
+    IColumnsData | undefined
+  >();
+  // const [selectedTask, setSelectedTask] = useState<ITasksData | undefined>();
 
   useEffect(() => {
     getBoards();
@@ -33,6 +45,11 @@ const AppProvider = (props: { children: ReactNode }) => {
     name: board.name,
     columns: board.columns,
   }));
+  const columnsData = board?.columns?.map((column) => ({
+    name: column.name,
+    tasks: column.tasks,
+  }));
+  console.log(columnsData);
 
   const getBoards = () => {
     setBoards(boardsData);
@@ -40,11 +57,26 @@ const AppProvider = (props: { children: ReactNode }) => {
     //   setSelectedBoard(boardsData[0]);
     // } else {
     setSelectedBoard(boards[0]);
+    // setColumns(columnsData);
+    setSelectedColumn(columns[0]);
+    getColumns();
     // }
     console.log(selectedBoard);
+    console.log(selectedColumn);
   };
 
-  const getBoard = () => {};
+  const selectedBoardColumns = selectedBoard?.columns?.map((column) => ({
+    name: column.name,
+    tasks: column.tasks,
+  }));
+  console.log(selectedBoardColumns);
+
+  const getColumns = () => {
+    if (selectedBoard?.columns) {
+      setSelectedColumn(columns[0]);
+      console.log(selectedBoard);
+    }
+  };
 
   const openNewTaskModal = () => {
     setShowNewTaskModal((prevShowNewTaskModal) => !prevShowNewTaskModal);
@@ -67,6 +99,12 @@ const AppProvider = (props: { children: ReactNode }) => {
         boards,
         selectedBoard,
         setSelectedBoard,
+        column,
+        columns,
+        task,
+        tasks,
+        selectedColumn,
+        setSelectedColumn,
       }}
     >
       {props.children}

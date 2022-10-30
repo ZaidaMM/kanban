@@ -1,5 +1,6 @@
 .layout {
-  width: 100vw;
+  min-width: 100vw;
+  min-height: 100vh;
   padding: 0;
   margin: 0;
 
@@ -258,9 +259,6 @@
       padding-top: 24px;
 
       .columns-container {
-        display: grid;
-        grid-template-rows: auto;
-        grid-template-columns: 1fr;
         margin-right: 24px;
         padding-bottom: 24px;
         padding-left: 24px;
@@ -268,11 +266,6 @@
       }
       .column-name {
         display: flex;
-        flex-direction: row;
-        justify-content: left;
-        text-align: center;
-        flex-wrap: nowrap;
-        padding-bottom: 24px;
 
         .todo,
         .now {
@@ -305,7 +298,43 @@
           letter-spacing: 2.4px;
           font-size: 12px;
           padding-left: 12px;
+          max-height: fit-content;
         }
+      }
+      .tasks-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+
+        .task-title {
+          border-radius: 8px;
+          padding: 23px 16px;
+          margin-bottom: 20px;
+          width: 280px;
+          cursor: pointer;
+        }
+        .tasks-container.task-title:hover,
+        .task-title:hover {
+          color: $primary-200;
+        }
+      }
+      .task-title-light {
+        border-radius: 8px;
+        padding: 23px 16px;
+        margin-bottom: 20px;
+        width: 280px;
+        cursor: pointer;
+        background: #ffffff;
+      }
+
+      .task-title-dark {
+        border-radius: 8px;
+        padding: 23px 16px;
+        margin-bottom: 20px;
+        width: 280px;
+        cursor: pointer;
+        background: $grey-500;
+        color: #ffffff;
       }
     }
   }

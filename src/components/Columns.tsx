@@ -1,7 +1,10 @@
 import { useAppContext } from '../provider/AppProvider';
+import { useThemeContext } from '../provider/ThemeModeProvider';
+import Tasks from './Tasks';
 
 const Columns = () => {
-  const { selectedBoard, boards } = useAppContext();
+  const { darkMode } = useThemeContext();
+  const { selectedBoard, boards, selectedColumn } = useAppContext();
 
   return (
     <>
@@ -13,6 +16,25 @@ const Columns = () => {
               <p className='column-title' key={column.name}>
                 {column.name} <span>({column.tasks?.length})</span>
               </p>
+            </div>
+            <div
+              className={
+                darkMode
+                  ? 'tasks-container tasks-container-dark'
+                  : 'tasks-container'
+              }
+            >
+              {column?.tasks?.map((task) => (
+                <p
+                  className={
+                    darkMode
+                      ? 'task-title task-title-dark'
+                      : 'task-title task-title-light'
+                  }
+                >
+                  {task.title}
+                </p>
+              ))}
             </div>
           </div>
         ))}
