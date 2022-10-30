@@ -27,8 +27,6 @@
     .nav-link {
       display: flex;
       align-items: center;
-      background: #ffffff;
-      color: $grey-300;
       border-radius: 0 50px 50px 0;
       width: 276px;
       padding-top: 14px;
@@ -36,6 +34,22 @@
       padding-left: 34px;
       font-size: 15px;
       font-weight: 700;
+    }
+    .nav-link.create-board {
+      background: #ffffff;
+      color: $primary-200;
+    }
+    .nav-link.create-board .icon {
+      filter: invert(39%) sepia(80%) saturate(854%) hue-rotate(213deg)
+        brightness(83%) contrast(86%);
+    }
+    .nav-link-light {
+      background: #ffffff;
+      color: $grey-300;
+    }
+    .nav-link-dark {
+      color: #ffffff;
+      background: $grey-500;
     }
     .nav-link.active {
       background: $primary-200;
@@ -93,6 +107,9 @@
         width: 251px;
         height: 48px;
         background: $grey-100;
+      }
+      .mode-toggler-container-dark {
+        background: $grey-600;
       }
 
       .switch-toggle {
