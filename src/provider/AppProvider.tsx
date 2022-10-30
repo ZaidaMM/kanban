@@ -1,5 +1,13 @@
-import { ReactNode, useEffect, useState, useContext } from 'react';
+import {
+  ReactNode,
+  useEffect,
+  useState,
+  useContext,
+  ChangeEventHandler,
+} from 'react';
 import { AppContext } from './AppContext';
+import { IBoardsData } from '../interfaces/IBoardsData';
+import data from '../data.json';
 
 function useAppContext() {
   const context = useContext(AppContext);
@@ -10,7 +18,28 @@ function useAppContext() {
 }
 
 const AppProvider = (props: { children: ReactNode }) => {
-  const [showNewTaskModal, setShowNewTaskModal] = useState(true);
+  const [showNewTaskModal, setShowNewTaskModal] = useState(false);
+  const [board, setBoard] = useState<IBoardsData>();
+  const [boards, setBoards] = useState<IBoardsData[]>([]);
+  const [selectedBoard, setSelectedBoard] = useState<IBoardsData | undefined>();
+
+  useEffect(() => {
+    getBoards();
+    // console.log(boards);
+  }, []);
+
+  const boardsData = data.boards.map((board: { name: any; columns: any }) => ({
+    name: board.name,
+    columns: board.columns,
+  }));
+
+  const getBoards = () => {
+    setBoards(boardsData);
+    setSelectedBoard(boards[0]);
+    console.log(selectedBoard);
+  };
+
+  const getBoard = () => {};
 
   const openNewTaskModal = () => {
     setShowNewTaskModal((prevShowNewTaskModal) => !prevShowNewTaskModal);
@@ -29,6 +58,10 @@ const AppProvider = (props: { children: ReactNode }) => {
         openNewTaskModal,
         showNewTaskModal,
         setShowNewTaskModal,
+        board,
+        boards,
+        selectedBoard,
+        setSelectedBoard,
       }}
     >
       {props.children}

@@ -5,8 +5,12 @@ import { useThemeContext } from '../../provider/ThemeModeProvider';
 
 const TopNavigation = () => {
   const { darkMode, dark, light } = useThemeContext();
-  const { openNewTaskModal, showNewTaskModal, setShowNewTaskModal } =
-    useAppContext();
+  const {
+    openNewTaskModal,
+    showNewTaskModal,
+    setShowNewTaskModal,
+    selectedBoard,
+  } = useAppContext();
   return (
     <nav
       style={
@@ -21,7 +25,7 @@ const TopNavigation = () => {
             }
       }
     >
-      <h4 className='navbar-title'>Platform Launch</h4>
+      <h4 className='navbar-title'>{selectedBoard?.name}</h4>
       <div className='navbar-btns'>
         <button className='btn  btn-nav' onClick={() => openNewTaskModal()}>
           + Add New Task

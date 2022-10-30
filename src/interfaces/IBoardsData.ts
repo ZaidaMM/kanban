@@ -1,7 +1,7 @@
 import { Key } from "react";
 
 export interface IBoardsData {
-  _id: Key | null | undefined;
+  // _id: Key | null | undefined;
   name: string | undefined;
   columns?:IColumnsData[];
   customClass?: string;
@@ -9,7 +9,7 @@ export interface IBoardsData {
 }
 
 export interface IColumnsData {
-  _id: Key | null | undefined;
+  // _id: Key | null | undefined;
   name?: string | undefined;
   tasks?: ITasksData[];
   quantity? : number | string;
@@ -18,7 +18,7 @@ export interface IColumnsData {
 }
 
 export interface ITasksData {
-  _id: Key | null | undefined;
+  // _id: Key | null | undefined;
   title?: string | undefined;
   description?: string | undefined;
   status?: string | undefined;
