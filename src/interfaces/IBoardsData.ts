@@ -26,12 +26,11 @@ export interface ITasksData {
   subtasks?: ISubtasksData[];
   completedSubtasks? : number | string;
   totalSubtasks?:number | string;
-
 }
 
 export interface ISubtasksData {
   subtaskTitle?: string | undefined;
-  isCompleted?: number | string;
+  isCompleted?: boolean;
   totalSubtasks: number | string;
   customClass?: string | undefined;
 }

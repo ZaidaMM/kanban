@@ -1,20 +1,7 @@
 import { useAppContext } from '../provider/AppProvider';
+import { useThemeContext } from '../provider/ThemeModeProvider';
 
 const Tasks = () => {
-  const { selectedBoard, selectedColumn, columns, column } = useAppContext();
-
-  return (
-    <div>
-      {selectedColumn?.tasks?.map((task) =>
-        column?.name === selectedColumn?.name ? (
-          <>
-            <p>{task.title}</p>{' '}
-          </>
-        ) : (
-          <></>
-        )
-      )}
-    </div>
-  );
+  return <div></div>;
 };
 export default Tasks;

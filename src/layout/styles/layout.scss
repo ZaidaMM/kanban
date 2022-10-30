@@ -298,6 +298,7 @@
           letter-spacing: 2.4px;
           font-size: 12px;
           padding-left: 12px;
+          margin-bottom: 24px;
           max-height: fit-content;
         }
       }
@@ -308,13 +309,23 @@
 
         .task-title {
           border-radius: 8px;
-          padding: 23px 16px;
           margin-bottom: 20px;
           width: 280px;
           cursor: pointer;
+          font-size: 15px;
+          font-weight: 700;
+          padding-top: 23px;
+          padding-bottom: 23px;
+          p {
+            margin-bottom: 0;
+          }
+          span {
+            font-size: 12px;
+            font-weight: 700;
+          }
         }
-        .tasks-container.task-title:hover,
-        .task-title:hover {
+        .tasks-container.task-title:hover p,
+        .task-title:hover p {
           color: $primary-200;
         }
       }
@@ -326,7 +337,9 @@
         cursor: pointer;
         background: #ffffff;
       }
-
+      .task-title-light p {
+        color: #20212c;
+      }
       .task-title-dark {
         border-radius: 8px;
         padding: 23px 16px;
@@ -335,6 +348,9 @@
         cursor: pointer;
         background: $grey-500;
         color: #ffffff;
+        .task-title-dark p {
+          color: #ffffff;
+        }
       }
     }
   }

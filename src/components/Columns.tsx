@@ -4,7 +4,7 @@ import Tasks from './Tasks';
 
 const Columns = () => {
   const { darkMode } = useThemeContext();
-  const { selectedBoard, boards, selectedColumn } = useAppContext();
+  const { selectedBoard } = useAppContext();
 
   return (
     <>
@@ -24,16 +24,28 @@ const Columns = () => {
                   : 'tasks-container'
               }
             >
+              {/* <Tasks /> */}
               {column?.tasks?.map((task) => (
-                <p
+                <div
                   className={
                     darkMode
                       ? 'task-title task-title-dark'
                       : 'task-title task-title-light'
                   }
                 >
-                  {task.title}
-                </p>
+                  <p key={task.title}>{task.title}</p>
+                  <span>
+                    {`${
+                      task.subtasks?.filter((subtask) => {
+                        if (subtask?.isCompleted) {
+                          return true;
+                        }
+                        return false;
+                      }).length || 0
+                    } of
+                    ${task.subtasks?.length} subtasks`}
+                  </span>
+                </div>
               ))}
             </div>
           </div>

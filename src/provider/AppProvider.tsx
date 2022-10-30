@@ -53,27 +53,20 @@ const AppProvider = (props: { children: ReactNode }) => {
 
   const getBoards = () => {
     setBoards(boardsData);
-    // if (!selectedBoard) {
-    //   setSelectedBoard(boardsData[0]);
-    // } else {
-    setSelectedBoard(boards[0]);
-    // setColumns(columnsData);
-    setSelectedColumn(columns[0]);
-    getColumns();
-    // }
+    if (!selectedBoard) {
+      setSelectedBoard(boardsData[0]);
+    } else {
+      setSelectedBoard(boards[0]);
+
+      getColumns();
+    }
     console.log(selectedBoard);
     console.log(selectedColumn);
   };
 
-  const selectedBoardColumns = selectedBoard?.columns?.map((column) => ({
-    name: column.name,
-    tasks: column.tasks,
-  }));
-  console.log(selectedBoardColumns);
-
   const getColumns = () => {
     if (selectedBoard?.columns) {
-      setSelectedColumn(columns[0]);
+      selectedBoard?.columns?.map((column) => setColumns(columns));
       console.log(selectedBoard);
     }
   };
