@@ -272,21 +272,24 @@
         flex-wrap: nowrap;
         padding-bottom: 24px;
 
-        .todo {
+        .todo,
+        .now {
           background-color: #49c4e5;
           height: 15px;
           width: 15px;
           border-radius: 50%;
           align-items: center;
         }
-        .doing {
+        .doing,
+        .next {
           background-color: #8471f2;
           height: 15px;
           width: 15px;
           border-radius: 50%;
           align-items: center;
         }
-        .done {
+        .done,
+        .later {
           background-color: #67e2ae;
           height: 15px;
           width: 15px;

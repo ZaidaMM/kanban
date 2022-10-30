@@ -25,6 +25,7 @@ const AppProvider = (props: { children: ReactNode }) => {
 
   useEffect(() => {
     getBoards();
+
     // console.log(boards);
   }, []);
 
@@ -35,7 +36,11 @@ const AppProvider = (props: { children: ReactNode }) => {
 
   const getBoards = () => {
     setBoards(boardsData);
-    setSelectedBoard(boards[0]);
+    if (!selectedBoard) {
+      setSelectedBoard(boardsData[0]);
+    } else {
+      setSelectedBoard(boards[0]);
+    }
     console.log(selectedBoard);
   };
 
