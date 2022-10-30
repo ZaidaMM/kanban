@@ -10,7 +10,7 @@ function useThemeContext() {
 }
 
 const ThemeModeProvider = (props: { children: ReactNode }) => {
-  const [darkMode, setDarkMode] = useState<boolean>(true);
+  const [darkMode, setDarkMode] = useState<boolean>(false);
 
   const handleToggleTheme = () => {
     setDarkMode(!darkMode);

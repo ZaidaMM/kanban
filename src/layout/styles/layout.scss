@@ -250,6 +250,59 @@
     color: $grey-300;
     min-height: calc(100vh - 96px);
     min-width: calc(100vw - 300px);
+
+    .selected-board {
+      display: flex;
+      flex-direction: row;
+      padding-top: 24px;
+      .columns-container {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr;
+        margin-right: 24px;
+        padding-bottom: 24px;
+        padding-left: 24px;
+        min-width: 280px;
+      }
+      .column-name {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        text-align: center;
+        flex-wrap: nowrap;
+        padding-bottom: 24px;
+
+        .todo {
+          background-color: #49c4e5;
+          height: 15px;
+          width: 15px;
+          border-radius: 50%;
+          align-items: center;
+        }
+        .doing {
+          background-color: #8471f2;
+          height: 15px;
+          width: 15px;
+          border-radius: 50%;
+          align-items: center;
+        }
+        .done {
+          background-color: #67e2ae;
+          height: 15px;
+          width: 15px;
+          border-radius: 50%;
+          align-items: center;
+        }
+        .column-title {
+          text-transform: uppercase;
+          color: $grey-300;
+          font-weight: 700;
+          letter-spacing: 2.4px;
+          font-size: 12px;
+          padding-left: 12px;
+        }
+      }
+    }
   }
 }
 

@@ -2,6 +2,8 @@ import React from 'react';
 import { useThemeContext } from '../provider/ThemeModeProvider';
 import TopNavigation from './components/TopNavigation';
 import Sidebar from './components/Sidebar';
+import { Container } from 'reactstrap';
+import Homepage from './components/Homepage';
 
 const Layout = () => {
   const { darkMode, dark, light } = useThemeContext();
@@ -20,7 +22,9 @@ const Layout = () => {
               darkMode ? { backgroundColor: dark } : { backgroundColor: light }
             }
           >
-            <h1>KANBAN</h1>
+            <Container className='p-0'>
+              <Homepage />
+            </Container>
           </main>
         </div>
       </div>
