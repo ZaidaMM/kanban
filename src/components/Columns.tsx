@@ -5,8 +5,8 @@ const Columns = () => {
 
   return (
     <>
-      {selectedBoard ? (
-        selectedBoard.columns?.map((column) => (
+      <div className='selected-board'>
+        {selectedBoard?.columns?.map((column) => (
           <div className='columns-container'>
             <div className='column-name'>
               <span className={column.name?.toLowerCase()}></span>
@@ -15,13 +15,8 @@ const Columns = () => {
               </p>
             </div>
           </div>
-        ))
-      ) : (
-        <>
-          <p>This board is empty. Create a new column to get started</p>
-          <button>+ Add New Column</button>
-        </>
-      )}
+        ))}
+      </div>
     </>
   );
 };

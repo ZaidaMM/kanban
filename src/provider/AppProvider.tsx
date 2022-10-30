@@ -36,11 +36,11 @@ const AppProvider = (props: { children: ReactNode }) => {
 
   const getBoards = () => {
     setBoards(boardsData);
-    if (!selectedBoard) {
-      setSelectedBoard(boardsData[0]);
-    } else {
-      setSelectedBoard(boards[0]);
-    }
+    // if (!selectedBoard) {
+    //   setSelectedBoard(boardsData[0]);
+    // } else {
+    setSelectedBoard(boards[0]);
+    // }
     console.log(selectedBoard);
   };
 
