@@ -17,7 +17,7 @@ const ThemeModeProvider = (props: { children: ReactNode }) => {
   };
 
   const dark = '#20212C';
-  const light = '#E4EBFA';
+  const light = '#F4F7FD';
 
   useEffect(() => {
     localStorage.setItem('darkMode', JSON.stringify(darkMode));

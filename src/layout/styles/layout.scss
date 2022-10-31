@@ -79,7 +79,8 @@
       margin-right: 16px;
     }
     .toggle-container {
-      bottom: 47px;
+      bottom: 0px;
+      position: absolute;
       .sidebar-toggler {
         display: flex;
         flex-direction: row;
@@ -259,7 +260,7 @@
       padding-top: 24px;
 
       .columns-container {
-        margin-right: 24px;
+        // margin-right: 24px;
         padding-bottom: 24px;
         padding-left: 24px;
         min-width: 280px;
@@ -306,6 +307,7 @@
         display: flex;
         flex-direction: column;
         justify-content: start;
+        width: 280px;
 
         .task-title {
           border-radius: 8px;
@@ -351,6 +353,26 @@
         .task-title-dark p {
           color: #ffffff;
         }
+      }
+      .create-new-column {
+        background-color: $grey-200;
+        color: $grey-300;
+        font-weight: 700;
+        font-size: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        line-height: 30px;
+        width: 280px;
+        height: calc(100vh - 184px);
+        // min-height: 100vh;
+        // min-height: 100%;
+        top: 50%;
+        // margin-bottom: 45px;
+        margin-left: 24px;
+        margin-top: 40px;
+        border-radius: 6px;
       }
     }
   }

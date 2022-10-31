@@ -50,6 +50,9 @@ const Columns = () => {
             </div>
           </div>
         ))}
+        <div className='create-new-column'>
+          <p>+ New Column</p>
+        </div>
       </div>
     </>
   );
