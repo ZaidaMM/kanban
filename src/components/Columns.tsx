@@ -50,7 +50,13 @@ const Columns = () => {
             </div>
           </div>
         ))}
-        <div className='create-new-column'>
+        <div
+          className={
+            darkMode
+              ? 'create-new-column create-new-column-dark'
+              : 'create-new-column create-new-column-light'
+          }
+        >
           <p>+ New Column</p>
         </div>
       </div>
